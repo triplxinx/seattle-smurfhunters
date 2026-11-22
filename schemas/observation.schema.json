@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Observation",
+  "type": "object",
+  "required": [
+    "id",
+    "latitude",
+    "longitude",
+    "observed_at",
+    "category"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "longitude": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "category": {
+      "enum": [
+        "alder",
+        "blackberry",
+        "other"
+      ]
+    },
+    "image_uri": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
